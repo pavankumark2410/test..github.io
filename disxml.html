@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>STUDENT DISPLAY</h1>
+    <p id="demo"></p>
+
+    <script>
+        var x, i, xmlDoc;
+        var txt = "";
+        var text = "<christuniversity>" +
+            "<name>Pavan1</name>" +
+            "<phone>990080875</phone>" +
+            "<name>Pavan11</name>" +
+            "<univesity>2005</university>" +
+            "<email>2005</email>" +
+            "</christuniversity>" + "<christuniversity>" +
+            "<name>Pava12</name>" +
+            "<phone>990080875</phone>" +
+            "<univesity>2005</university>" +
+            "<email>2005</email>" +
+            "</christuniversity>" + "<christuniversity>" +
+            "<name>Pavan13</name>" +
+            "<phone>990080875</phone>" +
+            "<univesity>2005</university>" +
+            "<email>2005</email>" +
+            "</christuniversity>";
+
+        parser = new DOMParser();
+        xmlDoc = parser.parseFromString(text, "text/xml");
+
+        // documentElement always represents the root node
+        x = xmlDoc.documentElement.childNodes;
+
+        txt += x[1].nodeName + ": " + x[1].childNodes[0].nodeValue + "1" + "<br>";
+        txt += x[1].nodeName + ": " + x[1].childNodes[0].nodeValue + "2" + "<br>";
+        txt += x[1].nodeName + ": " + x[1].childNodes[0].nodeValue + "3" + "<br>";
+
+        document.getElementById("demo").innerHTML = txt;
+    </script>
+
+</body>
+
+</html>
